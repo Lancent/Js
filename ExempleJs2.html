@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Recréer du texte à partir de divers éléments (strong, a,...) grâce au Js</title>
+    </head>
+    <body>
+        <div id="divTP1">
+            Le <strong>World Wide Web Consortium</strong>, abrégé par le sigle <strong>W3C</strong>, est un <a href="http://fr.wikipedia.org/wiki/Organisme_de_normalisation" title="Organisme de normalisation">organisme de standardisation</a> à but non-lucratif chargé de	promouvoir la compatibilité des technologies du <a href="http://fr.wikipedia.org/wiki/World_Wide_Web" title="World Wide Web">World Wide Web</a>.
+        </div>
+    </body>
+    <script>
+        var paragraph = document.getElementById('divTP1');
+        var compteur = 1;
+        //alert(paragraph.firstElementChild.firstChild.data);
+        while(paragraph.firstElementChild)
+        {
+            alert(compteur);
+            var lecteur = paragraph.firstElementChild.firstChild.cloneNode(false);
+            document.createTextNode(lecteur);
+            //alert(lecteur.data);
+            paragraph.insertBefore(lecteur, paragraph.firstElementChild);
+            paragraph.removeChild(paragraph.firstElementChild);
+            compteur++;
+        }
+    </script>
+    </body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Sélectionner des noeuds</title>
+    </head>
+    <body>
+    <div id="menu">
+		<div class="item" color="green">
+			<span color="blue">Élément 1</span>
+			<span>Élément 2</span>
+		</div>
+		<div class="publicite">
+			<span>Élément 3</span>
+			<span>Élément 4</span>
+		</div>
+	</div>
+	<div id="contenu" color="blue">
+		<span>Introduction au contenu de la page...</span>
+	</div>
+    <script>
+		var query = document.querySelector('#menu .item');
+		alert("avec innerHTML : "+query.innerHTML);
+		alert("avec textContent : "+query.textContent);
+		alert("avec .getAttribute() : "+query.getAttribute('color'));
+    </script>
+    </body>
+</html>

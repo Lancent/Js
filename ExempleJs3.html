@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Recréer du texte à partir de divers éléments (strong, a,...) grâce au Js</title>
+    </head>
+    <body>
+		<style>
+			p{
+				color: #0094ff;
+  			}
+			li{
+				color: #f00;
+  			}
+		</style>
+        <div id="divTP2">
+        <p>Langages basés sur ECMAScript :</p>
+        <ul id="liste">
+            <li>JavaScript</li>
+            <li>JScript</li>
+            <li>ActionScript</li>
+            <li>EX4</li>
+        </ul>
+        </div>
+		<script>
+  	var paragraph = document.getElementById('divTP2');
+  	var compteur = 1;
+  	var lecteur
+
+  	alert('Suppression paragraphe');
+  	lecteur = paragraph.firstElementChild.firstChild.cloneNode(false);
+  	document.createTextNode(lecteur);
+  	alert(lecteur.data);
+  	paragraph.insertBefore(lecteur, paragraph.firstElementChild);
+  	paragraph.removeChild(paragraph.firstElementChild);
+
+  	alert('Suppression liste');
+	paragraph = document.querySelector('ul');
+  	while (paragraph.firstElementChild)
+  	{
+  		lecteur = paragraph.firstElementChild.firstChild.cloneNode(false);
+  		document.createTextNode(lecteur);
+  		paragraph.insertBefore(lecteur, paragraph.firstElementChild);
+  		paragraph.removeChild(paragraph.firstElementChild);
+  	}
+    </script>
+    </body>
+</html>
